@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Refund Calculator</title>
+    <style type="text/css">
+        price { border-color: transparent; background-color: transparent; font-size: 15px; width:60px;}
+    </style>
+</head>
+<body>
+    Lastest Update : 2020-08-18
+    <script>
+        //Number Key Only
+        function NumberOnly(){
+            if((event.keyCode<48)||(event.keyCode>57))
+            event.returnValue=false;
+        }
+
+        // Credit Function
+        var TotalCredit = 0;
+        var TotalCreditBonus = 0;
+        var CreditDisplay = "";
+        function addCredit10000(){
+            TotalCredit = TotalCredit + 10000;
+            TotalCreditBonus = TotalCreditBonus + 1000;
+
+            CreditDisplay = CreditDisplay + "+10000 (+1000)" + "\n";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+        function minCredit10000(){
+            TotalCredit = TotalCredit - 10000;
+            TotalCreditBonus = TotalCreditBonus - 1000;
+
+            CreditDisplay = CreditDisplay + "-10000 (-1000)" + "\n";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+        function addCredit20000(){
+            TotalCredit = TotalCredit + 20000;
+            TotalCreditBonus = TotalCreditBonus + 3000;
+
+            CreditDisplay = CreditDisplay + "+20000 (+3000)" + "\n";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+        function minCredit20000(){
+            TotalCredit = TotalCredit - 20000;
+            TotalCreditBonus = TotalCreditBonus - 3000;
+
+            CreditDisplay = CreditDisplay + "-20000 (-3000)" + "\n";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+        function addCredit50000(){
+            TotalCredit = TotalCredit + 50000;
+            TotalCreditBonus = TotalCreditBonus + 10000;
+
+            CreditDisplay = CreditDisplay + "+50000 (+10000)" + "\n";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+        function minCredit50000(){
+            TotalCredit = TotalCredit - 50000;
+            TotalCreditBonus = TotalCreditBonus - 10000;
+
+            CreditDisplay = CreditDisplay + "-50000 (-10000)" + "\n";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+        function CreditReset(){
+            TotalCredit = 0;
+            TotalCreditBonus = 0;
+            CreditDisplay = "";
+
+            document.getElementById('CreditID').value = CreditDisplay
+            document.getElementById('TotalCreditID').value = TotalCredit
+            document.getElementById('TotalCreditBonusID').value = TotalCreditBonus
+        }
+
+
+
+        // Reward Function
+        var TotalReward = 0;
+        var RewardDisplay = "";
+        var RewardOtherNumber = 0;
+        function addReward300(){
+            TotalReward = TotalReward + 300;
+
+            RewardDisplay = RewardDisplay + "+300" + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function minReward300(){
+            TotalReward = TotalReward - 300;
+
+            RewardDisplay = RewardDisplay + "-300" + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function addReward2000(){
+            TotalReward = TotalReward + 2000;
+
+            RewardDisplay = RewardDisplay + "+2000" + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function minReward2000(){
+            TotalReward = TotalReward - 2000;
+
+            RewardDisplay = RewardDisplay + "-2000" + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function addReward1200(){
+            TotalReward = TotalReward + 1200;
+
+            RewardDisplay = RewardDisplay + "+1200" + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function minReward1200(){
+            TotalReward = TotalReward - 1200;
+
+            RewardDisplay = RewardDisplay + "-1200" + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function addRewardOther(){
+            RewardOtherNumber = Number(document.getElementById('RewardOther').value);
+            TotalReward = TotalReward + RewardOtherNumber;
+            RewardDisplay = RewardDisplay + "+" + RewardOtherNumber + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function minRewardOther(){
+            RewardOtherNumber = Number(document.getElementById('RewardOther').value);
+            TotalReward = TotalReward - RewardOtherNumber;
+            RewardDisplay = RewardDisplay + "-" + RewardOtherNumber + "\n";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward
+        }
+        function RewardReset(){
+            TotalReward = 0;
+            RewardDisplay = "";
+
+            document.getElementById('RewardID').value = RewardDisplay
+            document.getElementById('TotalRewardID').value = TotalReward     
+            document.getElementById('RewardOther').value = "";      
+        }
+
+
+
+        // Fare Function
+        var Fare = 0;
+        var TotalFare = 0;
+        var FareDisplay = "";
+        var FareOtherNumber = 0;
+        function addFareOther(){
+            FareOtherNumber = Number(document.getElementById('FareOther').value);
+
+            Fare = Fare + FareOtherNumber;
+            TotalFare = TotalFare + FareOtherNumber;
+
+            FareDisplay = FareDisplay + "+" + FareOtherNumber + "\n";
+
+            document.getElementById('FareID').value = FareDisplay
+            document.getElementById('TotalFareID').value = TotalFare
+        }
+        function minFareOther(){
+            FareOtherNumber = Number(document.getElementById('FareOther').value);
+
+            Fare = Fare - FareOtherNumber;
+            TotalFare = TotalFare - FareOtherNumber;
+
+            FareDisplay = FareDisplay + "-" + FareOtherNumber + "\n";
+
+            document.getElementById('FareID').value = FareDisplay
+            document.getElementById('TotalFareID').value = TotalFare
+        }
+        function FareReset(){
+            Fare = 0;
+            TotalFare = 0;
+            FareDisplay = "";
+
+            document.getElementById('FareID').value = FareDisplay
+            document.getElementById('TotalFareID').value = TotalFare        
+            document.getElementById('FareOther').value = "";   
+        }
+
+
+
+        // Calculate Function
+        var cal_Credit = 0;
+        var cal_CreditBonus = 0;
+        var cal_CreditandBonus = 0;
+        var cal_Reward = 0;
+        var cal_Fare = 0;
+        var cal_ActualFare = 0;
+        var cal_ActualFare_sub = 0;
+        var cal_Refund1 = 0;
+        var cal_Refund2 = 0;
+        var cal_Refund3 = "";
+        var cal_CurrentCredit = 0;
+
+
+        function TextWrite(){
+            var TextWrite1 = "";
+            var TextWrite2 = "";
+            if(cal_Refund1 > 0)
+            {
+                if(cal_ActualFare == 0){
+                    TextWrite1 = "안녕하세요, 빔입니다.\n\n" + "충전하신 금액 " + cal_Credit + "원 전액을 환불 처리하였습니다.\n" +
+                    "환불 처리 내역이 반영되기까지는 영업일 기준 2~3일가량 소요될 수 있는 점 참고해 주시기 바랍니다.\n\n" + "항상 고객님의 의견과 안전을 우선시하는 Beam이 되겠습니다.\n" + "빔 커뮤니티팀 드림.";
+                    document.getElementById('TextBox').value = TextWrite1;
+                }
+                else{
+                    // Refund Amount is higher than 0
+                    TextWrite1 = "안녕하세요, 빔입니다.\n\n" + "충전하신 금액 " + cal_Credit + "원 중 " + cal_ActualFare + "원을 사용한 금액, " + cal_Refund1 + "원을 환불 처리하였습니다.\n" +
+                    "환불 처리 내역이 반영되기까지는 영업일 기준 2~3일가량 소요될 수 있는 점 참고해 주시기 바랍니다.\n\n" + "항상 고객님의 의견과 안전을 우선시하는 Beam이 되겠습니다.\n" + "빔 커뮤니티팀 드림.";
+                    document.getElementById('TextBox').value = TextWrite1;
+                }
+                
+            }
+            else{
+                // Refund Amount is lower than 0
+                TextWrite2 = "안녕하세요, 빔입니다.\n\n" + "충전하신 금액 " + cal_Credit + "원이 모두 소진되었습니다.\n" +
+                "잔여 포인트는 실제 충전한 금액이 아닌 추가로 획득하신 포인트임을 참고해 주시기 바랍니다.\n\n" + "항상 고객님의 의견과 안전을 우선시하는 Beam이 되겠습니다.\n" + "빔 커뮤니티팀 드림.";
+                document.getElementById('TextBox').value = TextWrite2;
+            };
+        }
+
+
+        function Calculate(){
+            CalculateReset();
+
+            cal_Credit = document.getElementById('TotalCreditID').value;
+            cal_CreditBonus = document.getElementById('TotalCreditBonusID').value;
+            cal_CreditandBonus = Number(document.getElementById('TotalCreditID').value) + Number(document.getElementById('TotalCreditBonusID').value);
+
+            cal_Reward = document.getElementById('TotalRewardID').value;
+            cal_Fare = document.getElementById('TotalFareID').value;
+
+            cal_ActualFare = cal_Fare - cal_Reward;
+            cal_ActualFare_sub = cal_ActualFare;
+            if(cal_ActualFare < 0){
+                cal_ActualFare = 0;
+            }
+
+            cal_Refund1 = cal_CreditandBonus - cal_CreditBonus - cal_ActualFare;
+            cal_CurrentCredit = cal_CreditandBonus - cal_ActualFare;
+            if(cal_Refund1 <= 0){
+                cal_Refund2 = 0;
+                document.getElementById('cal_RefundID3').value = "No Refund";
+            }
+            else{
+                cal_Refund2 = cal_Refund1;
+            }
+
+            document.getElementById('cal_CreditID').value = cal_CreditandBonus;
+            document.getElementById('cal_CreditBonusID').value = cal_CreditBonus;
+            document.getElementById('cal_RewardID').value = cal_Reward;
+            document.getElementById('cal_FareID').value = cal_Fare;
+            document.getElementById('cal_ActualFareID1').value = cal_ActualFare;
+            document.getElementById('cal_ActualFareID2').value = cal_ActualFare;
+            document.getElementById('cal_ActualFareSubID').value = cal_ActualFare_sub;
+            document.getElementById('cal_RefundID1').value = cal_Refund1;
+            document.getElementById('cal_RefundID2').value = cal_Refund2;
+            document.getElementById('cal_CurrentCreditID').value = cal_CurrentCredit;
+
+            TextWrite();
+        }
+
+
+        function CopyText(){
+            document.getElementById('copied').style.visibility = "visible";
+            var obj = document.getElementById("TextBox");
+            obj.select(); //select all
+            document.execCommand("copy"); //copy
+            obj.setSelectionRange(0, 0); //clear selected
+        }
+
+
+        function CalculateReset(){
+            document.getElementById('cal_CreditID').value = "";
+            document.getElementById('cal_CreditBonusID').value = "";
+            document.getElementById('cal_RewardID').value = "";
+            document.getElementById('cal_FareID').value = "";
+            document.getElementById('cal_ActualFareID1').value = "";
+            document.getElementById('cal_ActualFareID2').value = "";
+            document.getElementById('cal_ActualFareSubID').value = "";
+            document.getElementById('cal_RefundID1').value = "";
+            document.getElementById('cal_RefundID2').value = "";
+            document.getElementById('cal_RefundID3').value = "";
+            document.getElementById('cal_CurrentCreditID').value = "";
+            document.getElementById('copied').style.visibility = "hidden";
+            document.getElementById('TextBox').value = "";
+            
+        }
+
+
+        function ResetAll(){
+            CreditReset();
+            RewardReset();
+            FareReset();
+            CalculateReset();
+        }
+
+
+    </script>
+
+    <div style="display: flex; flex-direction: column; margin: 5px; position: relative; align-items: center;">
+        <div>
+            <div style="display: flex; flex-direction: row; place-content: center;">
+                <div style="display: flex; flex-direction: column; margin: 5px; text-align: center;">
+
+
+
+                    <div style="display: flex;  flex-direction: column; margin: 5px; border-style: solid; background-color: #cae8fc;">
+                        <div style="text-align: center; margin: 5px; text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 11px;">Credit</div>
+                        <div style="display: flex;  flex-direction: row; margin: 5px;">
+                            <div style="display: flex; flex-direction: column; position: relative;">
+                            
+                                <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                    <price>10000 ₩</price><input style="margin: 5px;" type="button" name="test" value=" + " onclick="addCredit10000()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minCredit10000()">
+                                </div>
+
+                                <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                    <price>20000 ₩</price><input style="margin: 5px;" type="button" name="test" value=" + " onclick="addCredit20000()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minCredit20000()">
+                                </div>
+
+                                <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                    <price>50000 ₩</price><input style="margin: 5px;" type="button" name="test" value=" + " onclick="addCredit50000()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minCredit50000()">
+                                </div>
+
+                                <div style="position: absolute; bottom: 0;">
+                                    <input style="margin: 5px; height: 30px;" type="button" name="test" value="RESET CREDIT" onclick="CreditReset()">
+                                </div>
+
+                            </div>
+                            <textarea id="CreditID" rows="15" cols="15" style="resize: none;" readonly></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="width:220px;">
+                            <div style="float: left; margin-left:10px;">Recharge Credit : </div><input id="TotalCreditID" style="width: 50px; text-align: center; border-color: transparent;" type="text" value="0" readonly>₩<br>
+                        </div>
+                        <div style="width:190px;">
+                            <div style="float: left; margin-left:10px;">Credit Bonus : </div><input id="TotalCreditBonusID" style="width: 50px; text-align: center; border-color: transparent;" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div style="display: flex; flex-direction: column; margin: 5px; text-align: center;">
+                    <div style="display: flex;  flex-direction: column; margin: 5px; border-style: solid; background-color: #ffef90;">
+                        <div style="text-align: center; margin: 5px; text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 11px;">Reward</div>
+                        <div style="display: flex;  flex-direction: row; margin: 5px;">
+                            <div style="display: flex; flex-direction: column; position: relative;">
+
+                                <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                    <price>300 P</price><input style="margin: 5px;" type="button" name="test" value=" + " onclick="addReward300()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minReward300()">
+                                </div>
+
+                                <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                    <price>1200 P</price><input style="margin: 5px;" type="button" name="test" value=" + " onclick="addReward1200()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minReward1200()">
+                                </div>
+
+                                <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                    <price>2000 P</price><input style="margin: 5px;" type="button" name="test" value=" + " onclick="addReward2000()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minReward2000()">
+                                </div>
+
+                                <div style="display: flex;  flex-direction: column;">
+                                    <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                        <input id="RewardOther" type="text" style="width: 52px;" onkeypress="NumberOnly()">
+                                        <input style="margin: 5px;" type="button" name="test" value=" + " onclick="addRewardOther()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minRewardOther()">
+                                    </div>
+                                </div>
+
+                                <div style="position: absolute; bottom: 0;">
+                                    <input style="margin: 5px; height: 30px;" type="button" name="test" value="RESET REWARD" onclick="RewardReset()">
+                                </div>
+
+                            </div>
+                            <textarea id="RewardID" rows="15" cols="15" style="resize: none;" readonly></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="width:150px;">
+                            <div style="float: left; margin-left:10px;">Reward : </div><input id="TotalRewardID" style="width: 50px; text-align: center; border-color: transparent;" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div style="display: flex; flex-direction: column; margin: 5px; text-align: center;">
+                    <div style="display: flex; flex-direction: column; margin: 5px; border-style: solid; background-color: #ffb3b3;">
+                        <div style="text-align: center; margin: 5px; text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 11px;">Fare</div>
+                        <div style="display: flex;  flex-direction: row; margin: 5px;">
+                            <div style="display: flex; flex-direction: column; position: relative;">
+
+                                <div style="display: flex;  flex-direction: column;">
+                                    <div style="display: flex;  flex-direction: row; margin: 5px; align-items: center;">
+                                        <input id="FareOther" type="text" style="width: 52px;" onkeypress="NumberOnly()">
+                                        <input style="margin: 5px;" type="button" name="test" value=" + " onclick="addFareOther()"><input style="margin: 5px;" type="button" name="test" value=" - " onclick="minFareOther()">
+                                    </div>
+                                </div>
+
+                                <div style="position: absolute; bottom: 0;">
+                                    <input style="margin: 5px; height: 30px;" type="button" name="test" value="RESET FARE" onclick="FareReset()">
+                                </div>
+
+                            </div>
+                            <textarea id="FareID" rows="15" cols="15" style="resize: none;" readonly></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="width:130px;">
+                            <div style="float: left; margin-left:10px;">Fare : </div><input id="TotalFareID" style="width: 50px; text-align: center; border-color: transparent;" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="display: flex; flex-direction: row;">
+                <div style="margin-left: 20px;">
+                    <textarea id="TextBox" rows="17" cols="40" style="resize: none;" placeholder="Macro Text" readonly></textarea>
+                </div>
+                <div style="margin-left: 20px;">
+                    <div style="display: flex; flex-direction: column;">
+
+                        <div style="font-size:14px;">
+                            <b>Fare - Reward = Actual Fare</b><br>(※ if <b>Reward</b> is higher than <b>Fare</b>, the <b>Actual Fare</b> is count as <b>0</b>.)
+                            <div style="margin-top: 10px;">
+                                <input id="cal_FareID" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly> - <input id="cal_RewardID" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly> = <input id="cal_ActualFareID1" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly><span style="margin-left:10px">(<input id="cal_ActualFareSubID" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly>)</span>
+                            </div>
+                            <br>
+                            <b>Total Credit - Credit Bonus - Actual Fare = Refund Amount</b><br>(※ if <b>Actual Fare</b> is higher than <b>Recharge Credit</b>, the <b>Refund Amount</b> is count as <b>0</b>.)
+                            <div style="margin-top: 10px;">
+                                <input id="cal_CreditID" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly> - <input id="cal_CreditBonusID" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly> - <input id="cal_ActualFareID2" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly> = <input id="cal_RefundID1" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly><span style="margin-left:10px;">(User's Current Credit = <input id="cal_CurrentCreditID" type="text" style="width: 52px; text-align: center; border-color: transparent;" readonly>)</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div style="margin-right: 100px; float: right; font-size: 20px; display: flex;">Refund Amount :<input id="cal_RefundID2" type="text" style="width: 80px; margin-left: 10px; font-size: 20px; text-align: center; border-color: transparent;" readonly>₩<input id="cal_RefundID3" type="text" style="width: 100px; margin-left: 10px; font-size: 18px; font-weight: bold; text-align: center; color:red; border-color: transparent;" readonly></div>
+
+                    
+                        <div style="display: flex; flex-direction: row; margin-top: 15px;">
+                            <input style="margin: 5px; background-color: #47b533; color: white; font-size: 20px; width: 110px; height: 50px; margin-left: 10px;" type="button" name="test" value="Calculate" onclick="Calculate()">
+                            <div style="margin: 5px;"><input style="background-color: #23a1eb; color: white; font-size: 20px; width: 110px; height: 50px;" type="button" name="test" value="Copy Text" onclick="CopyText()"><input type="text" id="copied" style="width: 100px; text-align: center; display: flex; border-color: transparent; visibility: hidden;" value="Copied!" readonly></div>
+                            <input style="margin: 5px; background-color: #ff0000; color: white; font-size: 20px; width: 100px; height: 50px; margin-left: 40px;" type="button" name="test" value="Reset All" onclick="ResetAll()">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
